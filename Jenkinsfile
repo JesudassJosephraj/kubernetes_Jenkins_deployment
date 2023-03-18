@@ -31,11 +31,13 @@ pipeline {
       }
     }
       
-          stage('Build B') {
-             steps {
-                 build job: "Sonar_Project", wait: true
-                    }
-                }
+     stage('Build B') {
+      steps{
+        script {
+          build job: "Sonar_Project", wait: true
+        }
+      }
+    }
 
 //     stage('Pushing Image') {
 //       environment {
